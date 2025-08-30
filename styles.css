@@ -1,5 +1,5 @@
 body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-h1 { background: #5f5e5e; color: rgb(162, 128, 128); padding: 1rem; margin: 0; }
+h1 { background: #100f0f; color: rgb(162, 128, 128); padding: 1rem; margin: 0; }
 #gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; padding: 1rem; }
 .wallpaper { border: 1px solid #ccc; border-radius: 8px; overflow: hidden; max-width: 300px; }
 .wallpaper img { width: 100%; display: block; }
