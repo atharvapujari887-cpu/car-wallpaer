@@ -1,0 +1,12 @@
+[
+  {
+    "id": "car01",
+    "title": "Sample Car",
+    "tags": ["supercar"],
+    "resolution": "1920x1080",
+    "likes": 0,
+    "dateAdded": "2025-08-30",
+    "thumb": "generated-image_3_ykve9h",
+    "src": "generated-image_3_ykve9h"
+  }
+]
