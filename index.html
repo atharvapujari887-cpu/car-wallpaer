@@ -3,57 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Wallpapers</title>
+  <title>Wallpaper Gallery</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">CarWallpaper</div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">MySite</div>
 
-      <!-- Search and tags -->
-      <div class="search-area">
-        <div class="search-box">
-          <input type="text" placeholder="Search wallpapers...">
-          <button>Search</button>
-        </div>
-        <div class="tags">
-          <span>Cars</span>
-          <span>Super Cars</span>
-          <span>Nature</span>
-          <span>Night</span>
-          <span>Day</span>
-        </div>
+    <div class="search-area">
+      <div class="search-box">
+        <input type="text" placeholder="Search wallpapers...">
+        <button>Search</button>
       </div>
+      <div class="tags">
+        <span>Cars</span>
+        <span>Super Car</span>
+        <span>Nature</span>
+        <span>Night</span>
+        <span>Day</span>
+      </div>
+    </div>
 
-      <!-- About Us / Contact Us -->
-      <ul class="nav-links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
 
-  <!-- (Sidebar + Gallery) -->
+  <!-- Main container -->
   <div class="main-container">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h3>Menu</h3>
+      <h3>Categories</h3>
       <ul>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Downloads</a></li>
-        <li><a href="#">Liked Wallpapers</a></li>
-        <li><a href="#">Filters</a></li>
-        <li><a href="#">Account</a></li>
+        <li><a href="#">Cars</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Nature</a></li>
       </ul>
     </div>
 
     <!-- Gallery -->
-   <div id="gallery" class="gallery"></div>
+    <div id="gallery" class="gallery"></div>
+  </div>
 
-  <!-- Load Wallpapers Script -->
-  <script src="script.js"></script>
+  <!-- Link your JS file -->
+  <script src="app.js"></script>
 </body>
 </html>
