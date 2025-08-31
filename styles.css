@@ -58,46 +58,29 @@ h1 {
 
 
 /* Navbar */
-/* Navbar Layout */
 .navbar {
   display: flex;
+  flex-direction: column;   /* stack items vertically */
   align-items: center;
-  justify-content: space-between;
   background-color: #222;
   color: white;
   padding: 15px 20px;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links li a:hover {
-  color: #ff9800;
-}
-
-/* Search area (search bar + tags) */
+/* Search area stays right under logo */
 .search-area {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-/* Bigger search bar */
 .search-box {
   display: flex;
   margin-bottom: 8px;
@@ -105,7 +88,7 @@ h1 {
 
 .search-box input {
   padding: 10px;
-  width: 250px;   /* increase width */
+  width: 300px;
   border: none;
   border-radius: 5px 0 0 5px;
 }
@@ -123,11 +106,12 @@ h1 {
   background-color: #e68900;
 }
 
-/* Tags now under search bar */
+/* Tags under search */
 .tags {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tags span {
@@ -141,4 +125,22 @@ h1 {
 
 .tags span:hover {
   background-color: #ff9800;
+}
+
+/* About Us / Contact now at bottom */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  color: #ff9800;
 }
