@@ -57,10 +57,6 @@ h1 {
 }
 
 
-body {
-  margin-left: 220px; /* same as sidebar width */
-}
-
 /* Navbar */
 .navbar {
   display: flex;
