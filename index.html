@@ -3,44 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Wallpapers</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-
-
-
-<body>
   <!-- Top Navbar -->
-<header>
-  <nav class="navbar">
-    <div class="logo">CarWallpaper</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CarWallpaper</div>
 
-    <!-- Search and tags (move up near logo) -->
-    <div class="search-area">
-      <div class="search-box">
-        <input type="text" placeholder="Search wallpapers...">
-        <button>Search</button>
+      <!-- Search and tags -->
+      <div class="search-area">
+        <div class="search-box">
+          <input type="text" placeholder="Search wallpapers...">
+          <button>Search</button>
+        </div>
+        <div class="tags">
+          <span>Cars</span>
+          <span>Super Cars</span>
+          <span>Nature</span>
+          <span>Night</span>
+          <span>Day</span>
+        </div>
       </div>
-      <div class="tags">
-        <span>Cars</span>
-        <span>Super Cars</span>
-        <span>Nature</span>
-        <span>Night</span>
-        <span>Day</span>
-      </div>
-    </div>
 
-    <!-- About Us / Contact Us (move below search area) -->
-    <ul class="nav-links">
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      <!-- About Us / Contact Us -->
+      <ul class="nav-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   
-  
   <!-- (Sidebar + Gallery) -->
   <div class="main-container">
     <!-- Sidebar -->
@@ -54,4 +49,12 @@
         <li><a href="#">Account</a></li>
       </ul>
     </div>
+
+    <!-- Gallery -->
+    <div id="gallery" class="gallery"></div>
+  </div>
+
+  <!-- Load Wallpapers Script -->
+  <script src="script.js"></script>
 </body>
+</html>
