@@ -1,12 +1,43 @@
+<!-- FILE: data.json -->
 [
-  {
-    "id": "car01",
-    "title": "Sample Car",
-    "tags": ["supercar"],
-    "resolution": "1920x1080",
-    "likes": 0,
-    "dateAdded": "2025-08-30",
-    "thumb": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756564739/generated-image_3_ykve9h.png",
-    "src": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756564739/generated-image_3_ykve9h.png",
-  }
+{
+"id": "w1",
+"title": "Aurora Night",
+"author": "SkyPics",
+"url": "https://picsum.photos/id/1018/1200/800",
+"tags": ["nature","northern lights","night"],
+"date": "2025-07-10T12:00:00Z"
+},
+{
+"id": "w2",
+"title": "Golden Desert",
+"author": "DesertArt",
+"url": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756564739/generated-image_3_ykve9h.png",
+"tags": ["desert","landscape","sunset"],
+"date": "2025-06-02T09:00:00Z"
+},
+{
+"id": "w3",
+"title": "City Lights",
+"author": "UrbanFrame",
+"url": "https://picsum.photos/id/1011/1200/800",
+"tags": ["city","night","urban"],
+"date": "2025-08-01T08:00:00Z"
+},
+{
+"id": "w4",
+"title": "Calm Lake",
+"author": "NatureLens",
+"url": "https://picsum.photos/id/1016/1200/800",
+"tags": ["lake","nature","calm"],
+"date": "2025-07-28T07:00:00Z"
+},
+{
+"id": "w5",
+"title": "Minimal Abstract",
+"author": "ArtHouse",
+"url": "https://picsum.photos/id/1025/1200/800",
+"tags": ["abstract","minimal","patterns"],
+"date": "2025-05-15T10:00:00Z"
+}
 ]
