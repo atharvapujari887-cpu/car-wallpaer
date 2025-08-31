@@ -1,70 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Wallpaper Gallery</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Wallpapers</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-<div class="brand">WallPix</div>
-<div class="search-wrap">
-<input id="searchInput" type="search" placeholder="Search wallpapers, tags, authors..." />
-<button id="clearSearch" title="Clear">✕</button>
-</div>
-</header>
+  <h1>Car Wallpapers</h1>
+  <div id="gallery" class="gallery"></div>
 
-
-<main class="container">
-<aside class="sidebar">
-<section class="panel">
-<h4>Tags</h4>
-<div id="tagsContainer" class="tags"></div>
-</section>
-
-
-<section class="panel">
-<h4>Sections</h4>
-<div class="sections">
-<button class="section-btn" data-section="all">All</button>
-<button class="section-btn" data-section="latest">Latest</button>
-<button class="section-btn" data-section="popular">Popular</button>
-</div>
-</section>
-
-
-<section class="panel">
-<h4>Quick Filters</h4>
-<div class="quick-filters">
-<label><input type="checkbox" id="onlyLiked"> Only liked</label>
-</div>
-</section>
-</aside>
-
-
-<section class="gallery-area">
-<div id="resultsInfo" class="results-info">Loading wallpapers...</div>
-<div id="gallery" class="gallery"></div>
-</section>
-</main>
-
-
-<template id="cardTemplate">
-<article class="card">
-<div class="card-media">
-<img loading="lazy" class="thumb" alt="wallpaper"/>
-<button class="like-btn" aria-label="like">♡ <span class="like-count">0</span></button>
-</div>
-<div class="card-body">
-<h3 class="title"></h3>
-<div class="meta">by <span class="author"></span> • <span class="date"></span></div>
-<div class="card-tags"></div>
-</div>
-</article>
-</template>
-
-
-<script src="app.js" type="module"></script>
+  <!-- Load JavaScript -->
+  <script src="app.js"></script>
 </body>
 </html>
