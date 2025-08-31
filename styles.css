@@ -8,13 +8,6 @@ h1 {
   margin: 20px 0;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-}
 
 .wallpaper {
   width: 300px;
