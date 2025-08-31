@@ -8,12 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.createElement("img");
         img.src = item.url;
         img.alt = item.title;
-        
         img.classList.add("wallpaper");
 
-  
-        if (item.width) img.width = item.width;
-        if (item.height) img.height = item.height;
         gallery.appendChild(img);
       });
     })
