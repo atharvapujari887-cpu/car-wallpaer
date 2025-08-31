@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.createElement("img");
         img.src = item.url;
         img.alt = item.title;
+        img.width = item.width;
+        img.height = item.height;
         img.classList.add("wallpaper");
 
         gallery.appendChild(img);
