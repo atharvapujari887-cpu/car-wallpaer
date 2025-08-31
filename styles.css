@@ -63,15 +63,6 @@ h1 {
   color: #ff9800;
 }
 
-/* Gallery now takes rest of the space */
-.gallery {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-}
 
 body {
   margin-left: 220px; /* same as sidebar width */
