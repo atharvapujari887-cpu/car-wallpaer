@@ -16,14 +16,13 @@ function displayWallpapers(wallpapersToShow) {
   gallery.innerHTML = "";
 
   if (wallpapersToShow.length === 0) {
-    gallery.innerHTML = "<p style='color:#ff6f61; font-weight:700;'>No wallpapers found.</p>";
+    gallery.innerHTML = "<p>No wallpapers found.</p>";
     return;
   }
 
   wallpapersToShow.forEach((item) => {
     const container = document.createElement("div");
     container.classList.add("wallpaper-item");
-    container.setAttribute("tabindex", "0");
 
     const img = document.createElement("img");
     img.src = item.url;
@@ -43,19 +42,11 @@ function displayWallpapers(wallpapersToShow) {
 
 function setupSearchAndTags() {
   const searchBtn = document.getElementById("search-btn");
-  const searchInput = document.querySelector(".search-wrapper input");
+  const searchInput = document.querySelector(".search-box input");
   const tagButtons = document.querySelectorAll(".tags button");
 
-  // Accessibility attribute helper
-  function setAriaPressed(button, isPressed) {
-    button.setAttribute("aria-pressed", isPressed);
-  }
-
   function resetTags() {
-    tagButtons.forEach((btn) => {
-      btn.classList.remove("active");
-      setAriaPressed(btn, false);
-    });
+    tagButtons.forEach((btn) => btn.classList.remove("active"));
   }
 
   searchBtn.addEventListener("click", () => {
@@ -68,24 +59,19 @@ function setupSearchAndTags() {
     btn.addEventListener("click", () => {
       const tagName = btn.dataset.tag.toLowerCase();
       searchInput.value = "";
-      const isActive = btn.classList.contains("active");
-      resetTags();
-      if (!isActive) {
-        btn.classList.add("active");
-        setAriaPressed(btn, true);
-        filterWallpapers(tagName);
-      } else {
+      if (btn.classList.contains("active")) {
+        btn.classList.remove("active");
         displayWallpapers(wallpapers);
+      } else {
+        resetTags();
+        btn.classList.add("active");
+        filterWallpapers(tagName);
       }
     });
   });
 }
 
 function filterWallpapers(keyword) {
-  if (!keyword) {
-    displayWallpapers(wallpapers);
-    return;
-  }
   const filtered = wallpapers.filter(
     (wp) =>
       wp.title.toLowerCase().includes(keyword) ||
@@ -93,5 +79,3 @@ function filterWallpapers(keyword) {
   );
   displayWallpapers(filtered);
 }
-
-
