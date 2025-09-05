@@ -1,54 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wallpapers</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CarWallpaper</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
   <div class="navbar">
     <div class="logo">CarWallpaper</div>
-
     <div class="search-area">
       <div class="search-box">
-        <input type="text" placeholder="Search wallpapers...">
-        <button>Search</button>
+        <input type="text" placeholder="Search wallpapers..." />
+        <button id="search-btn">Search</button>
       </div>
       <div class="tags">
-        <span>Cars</span>
-        <span>Super Car</span>
-        <span>Nature</span>
-        <span>Night</span>
-        <span>Day</span>
+        <span data-tag="cars">Cars</span>
+        <span data-tag="super car">Super Car</span>
+        <span data-tag="nature">Nature</span>
+        <span data-tag="night">Night</span>
+        <span data-tag="day">Day</span>
       </div>
     </div>
-
     <ul class="nav-links">
       <li><a href="#">About Us</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </div>
 
-  <!-- Main container -->
   <div class="main-container">
-    <!-- Sidebar -->
     <div class="sidebar">
       <h3>Menu</h3>
       <ul>
-        <li><a href="#">history</a></li>
+        <li><a href="#">History</a></li>
         <li><a href="#">Downloads</a></li>
-        <li><a href="#">filters</a></li>
+        <li><a href="#">Filters</a></li>
       </ul>
     </div>
-
-    <!-- Gallery -->
     <div id="gallery" class="gallery"></div>
   </div>
 
-  <!-- Link your JS file -->
   <script src="app.js"></script>
 </body>
 </html>
