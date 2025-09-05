@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetch("wallpapers.json")
-    .then((res) => res.json()) 
+    .then((res) => res.json())
     .then((wallpapers) => {
       window.wallpapers = wallpapers;
       initSidebar();
@@ -126,6 +126,10 @@ function setSidebarActive(filter) {
   clearSidebarActive();
   const link = document.querySelector(`.sidebar ul li a[data-filter="${filter}"]`);
   if (link) link.classList.add("active");
+}
+
+function clearSearch() {
+  document.getElementById("search-input").value = "";
 }
 
 // Modal related functions
