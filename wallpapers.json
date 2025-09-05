@@ -1,10 +1,12 @@
 [
   {
     "title": "Red Sports",
-    "url": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756643205/generated-image_2_xojbsg.png"
+    "url": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756643205/generated-image_2_xojbsg.png",
+    "tags": ["cars", "sports", "red"]
   },
   {
     "title": "Classic Car",
-    "url": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756564739/generated-image_3_ykve9h.png"
+    "url": "https://res.cloudinary.com/di5rdpx32/image/upload/v1756564739/generated-image_3_ykve9h.png",
+    "tags": ["cars", "classic", "vintage"]
   }
 ]
