@@ -116,11 +116,13 @@ body {
 /* Main container (sidebar + gallery) */
 .main-container {
   display: flex;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
   gap: 1.5rem;
   padding: 0 1rem;
-  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  /* Add min-height to push sidebar to stay vertically full height */
+  min-height: 80vh;
+  width: 100%;
 }
 
 /* Sidebar styling */
@@ -132,8 +134,11 @@ body {
   border-radius: 15px;
   padding: 1.5rem 1rem;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  /* Fix sidebar to left with position sticky to maintain on scroll */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
-
 .sidebar h3 {
   font-weight: 700;
   margin-bottom: 1rem;
@@ -171,6 +176,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   padding: 0.5rem;
+  min-height: 80vh; /* Force gallery to keep height and prevent layout jump */
 }
 
 /* Wallpaper cards */
