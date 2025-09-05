@@ -1,52 +1,52 @@
-/* General body styling */
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f4f4;
   color: #333;
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
+/* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   background: #222;
   color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  z-index: 1100;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;  /* Reduce horizontal padding for full width */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100vw; /* full viewport width */
-  box-sizing: border-box; /* make padding included in width */
-  border-radius: 0; /* remove rounded corners */
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 2px;
   user-select: none;
-  margin-left: 1rem; /* add left margin for some space */
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-right: 1rem; /* add margin on right side */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: 600;
+  margin-left: 1.5rem;
   padding: 0.3rem 0.8rem;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: background 0.3s;
 }
 
@@ -54,105 +54,24 @@ body {
   background: #ff9800;
 }
 
-
-/* Search section */
-.search-section {
-  background: #222;
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  margin: 2rem auto 1.5rem;
-  max-width: 900px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.search-box {
-  display: flex;
-  width: 100%;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  font-size: 1rem;
-}
-
-.search-box button {
-  background: #ff9800;
-  border: none;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding: 0.7rem 1.5rem;
-  font-weight: 700;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.search-box button:hover {
-  background: #e68900;
-}
-
-.tags {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.tags button {
-  background: #444;
-  border: none;
-  padding: 0.4rem 1rem;
-  border-radius: 15px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-  user-select: none;
-}
-
-.tags button:hover,
-.tags button.active {
-  background: #ff9800;
-}
-
-/* Main container (sidebar + gallery) */
-.main-container {
-  display: flex;
-  gap: 1.5rem;
-  padding: 0 1rem;
-  max-width: 1200px;
-  margin: 0 auto 0rem;
-  /* Add min-height to push sidebar to stay vertically full height */
-  min-height: 80vh;
-  width: 100%;
-}
-
-/* Sidebar styling */
+/* Sidebar */
 .sidebar {
-  flex-shrink: 0;
+  position: fixed;
+  top: 60px; /* height of navbar */
+  left: 0;
   width: 220px;
+  height: calc(100vh - 60px);
   background: #333;
+  padding: 1.5rem 1rem;
   color: white;
-  border-radius: 15px;
-  padding: 0rem 0rem;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  /* Fix sidebar to left with position sticky to maintain on scroll */
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
+  border-radius: 0 15px 15px 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
 }
+
 .sidebar h3 {
-  font-weight: 700;
+  margin-top: 0;
   margin-bottom: 1rem;
-  text-transform: capitalize;
 }
 
 .sidebar ul {
@@ -169,81 +88,217 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 0rem 0rem;
-  border-radius: 10px;
   display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
+.sidebar ul li a.active,
 .sidebar ul li a:hover {
   background: #ff9800;
 }
 
-/* Gallery styling */
-.gallery {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Main content */
+.main-content {
+  margin-left: 220px;
+  padding: 5.5rem 2rem 2rem 2rem;
+  width: calc(100% - 220px);
+  max-width: calc(1200px - 220px);
+  margin-right: auto;
+  margin-left: auto;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  padding: 0.5rem;
-  min-height: 80vh; /* Force gallery to keep height and prevent layout jump */
 }
 
-/* Wallpaper cards */
+/* Search section */
+.search-section {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+}
+
+.search-section input {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-section input:focus {
+  border-color: #ff9800;
+}
+
+.search-section button {
+  background: #ff9800;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-section button:hover {
+  background: #e68900;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
 .wallpaper-item {
   background: white;
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 14px rgba(0,0,0,0.15);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 .wallpaper-item:hover {
   transform: scale(1.05);
 }
 
-.wallpaper {
-  width: 100%;
+.wallpaper-item img {
   display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
 }
 
-.caption {
-  padding: 1rem;
+.wallpaper-title {
+  padding: 12px 16px;
   font-weight: 700;
   font-size: 1.1rem;
   color: #333;
   text-align: center;
   flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Responsive adjustments */
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px;
+  padding: 1rem 1.5rem 2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #222;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+#modal-title {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-actions button,
+.modal-actions a {
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+  user-select: none;
+}
+
+#like-btn {
+  background: #ff3b3b;
+}
+
+#like-btn.liked {
+  background: #d60000;
+}
+
+#like-btn:hover {
+  background: #bf2d2d;
+}
+
+#download-btn {
+  background: #4caf50;
+}
+
+#download-btn:hover {
+  background: #3b8d36;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .nav-links a {
-    margin-left: 0;
-  }
-  .main-container {
-    flex-direction: column;
-  }
   .sidebar {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
+    display: none;
   }
-  .search-section {
-    margin: 1.5rem 1rem;
+
+  .main-content {
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 6rem 1rem 1rem;
   }
 }
