@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetch("wallpapers.json")
-    .then((res) => res.json())
+    .then((res) => res.json()) 
     .then((wallpapers) => {
       window.wallpapers = wallpapers;
       initSidebar();
