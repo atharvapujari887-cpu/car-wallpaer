@@ -62,8 +62,8 @@ body {
   left: 0;
   width: 210px;
   height: calc(100vh - 70px);
-  background: #243142;
-  color: #656667;
+  background: #656667;
+  color: #fff;
   padding: 2rem 1rem 1rem 1rem;
   border-radius: 0 16px 16px 0;
   box-shadow: 2px 0 12px rgba(0,0,0,0.10);
