@@ -6,10 +6,9 @@ body {
   padding: 0;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
-  flex-direction: column;   /* stack items vertically */
+  flex-direction: column;
   align-items: center;
   background-color: #222;
   color: white;
@@ -22,24 +21,29 @@ body {
   margin-bottom: 10px;
 }
 
-/* Search area */
 .search-area {
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: flex-end;
   margin-bottom: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-box {
   display: flex;
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .search-box input {
   padding: 10px;
-  width: 350px;   /* made a bit bigger */
+  width: 100%;
   border: none;
   border-radius: 5px 0 0 5px;
+  font-size: 16px;
 }
 
 .search-box button {
@@ -49,18 +53,19 @@ body {
   color: white;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .search-box button:hover {
   background-color: #e68900;
 }
 
-/* Tags under search */
 .tags {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+  cursor: pointer;
 }
 
 .tags span {
@@ -70,13 +75,15 @@ body {
   border-radius: 15px;
   font-size: 14px;
   cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
 }
 
-.tags span:hover {
+.tags span:hover,
+.tags span.active {
   background-color: #ff9800;
 }
 
-/* About Us / Contact links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -94,12 +101,12 @@ body {
   color: #ff9800;
 }
 
-/* Main container holds sidebar + gallery */
 .main-container {
   display: flex;
+  min-height: 80vh;
+  margin-top: 20px;
 }
 
-/* Sidebar */
 .sidebar {
   width: 200px;
   background-color: #333;
@@ -131,7 +138,6 @@ body {
   color: #ff9800;
 }
 
-/* Gallery (right of sidebar) */
 .gallery {
   flex: 1;
   display: grid;
@@ -139,17 +145,33 @@ body {
   gap: 20px;
   padding: 20px;
   justify-items: center;
+  align-content: start;
 }
 
-/* Wallpaper images */
-.wallpaper {
+.wallpaper-item {
   width: 100%;
   max-width: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease;
 }
 
-.wallpaper:hover {
+.wallpaper-item:hover {
   transform: scale(1.05);
+}
+
+.wallpaper-item img.wallpaper {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.caption {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
 }
