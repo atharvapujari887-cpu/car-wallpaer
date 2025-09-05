@@ -2,42 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CarWallpaper</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="navbar">
+  <header class="navbar">
     <div class="logo">CarWallpaper</div>
-    <div class="search-area">
-      <div class="search-box">
-        <input type="text" placeholder="Search wallpapers..." />
-        <button id="search-btn">Search</button>
-      </div>
-      <div class="tags">
-        <span data-tag="cars">Cars</span>
-        <span data-tag="super car">Super Car</span>
-        <span data-tag="nature">Nature</span>
-        <span data-tag="night">Night</span>
-        <span data-tag="day">Day</span>
-      </div>
+    <nav class="nav-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="search-section">
+    <div class="search-wrapper">
+      <input type="text" placeholder="Search wallpapers..." aria-label="Search wallpapers" />
+      <button id="search-btn" aria-label="Search">🔍</button>
     </div>
-    <ul class="nav-links">
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
+    <div class="tags">
+      <button data-tag="cars" aria-pressed="false">Cars</button>
+      <button data-tag="super car" aria-pressed="false">Super Car</button>
+      <button data-tag="nature" aria-pressed="false">Nature</button>
+      <button data-tag="night" aria-pressed="false">Night</button>
+      <button data-tag="day" aria-pressed="false">Day</button>
+    </div>
+  </section>
 
   <div class="main-container">
-    <div class="sidebar">
+    <aside class="sidebar">
       <h3>Menu</h3>
       <ul>
         <li><a href="#">History</a></li>
         <li><a href="#">Downloads</a></li>
         <li><a href="#">Filters</a></li>
       </ul>
-    </div>
-    <div id="gallery" class="gallery"></div>
+    </aside>
+
+    <main id="gallery" class="gallery" aria-live="polite" aria-label="Wallpaper gallery">
+      <!-- Wallpapers will load here dynamically -->
+    </main>
   </div>
 
   <script src="app.js"></script>
