@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("wallpapers.json")
     .then((res) => res.json())
     .then((wallpapers) => {
-      window.wallpapers = wallpapers; // save globally
+      window.wallpapers = wallpapers;
       initSidebar();
       initSearch();
+      initTags();
       renderGallery(wallpapers);
       initModal();
       initLikes();
@@ -42,7 +43,7 @@ function renderGallery(wallpapers) {
 }
 
 function initSidebar() {
-  const sidebarLinks = document.querySelectorAll(".sidebar ul li a");
+  const sidebarLinks = document.querySelectorAll(".sidebar ul li a[data-filter]");
   sidebarLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -51,6 +52,7 @@ function initSidebar() {
       const filter = link.dataset.filter;
       filterWallpapers(filter);
       clearSearch();
+      clearTagsActive();
     });
   });
 }
@@ -64,6 +66,7 @@ function initSearch() {
     if (!query) {
       renderGallery(window.wallpapers);
       setSidebarActive("all");
+      clearTagsActive();
       return;
     }
     const filtered = window.wallpapers.filter((wp) =>
@@ -72,10 +75,31 @@ function initSearch() {
     );
     renderGallery(filtered);
     clearSidebarActive();
+    clearTagsActive();
   });
 
   searchInput.addEventListener("keyup", (e) => {
     if (e.key === "Enter") searchButton.click();
+  });
+}
+
+function initTags() {
+  const tagButtons = document.querySelectorAll(".tags button");
+  tagButtons.forEach((tagBtn) => {
+    tagBtn.addEventListener("click", () => {
+      const tag = tagBtn.dataset.tag.toLowerCase();
+      clearSidebarActive();
+      clearSearch();
+      if (tagBtn.classList.contains("active")) {
+        tagBtn.classList.remove("active");
+        renderGallery(window.wallpapers);
+        setSidebarActive("all");
+      } else {
+        clearTagsActive();
+        tagBtn.classList.add("active");
+        filterWallpapers(tag);
+      }
+    });
   });
 }
 
@@ -90,14 +114,12 @@ function filterWallpapers(filter) {
   renderGallery(filtered);
 }
 
-function clearSearch() {
-  document.getElementById("search-input").value = "";
+function clearTagsActive() {
+  document.querySelectorAll(".tags button").forEach((btn) => btn.classList.remove("active"));
 }
 
 function clearSidebarActive() {
-  document.querySelectorAll(".sidebar ul li a").forEach((l) => {
-    l.classList.remove("active");
-  });
+  document.querySelectorAll(".sidebar ul li a").forEach((l) => l.classList.remove("active"));
 }
 
 function setSidebarActive(filter) {
@@ -139,7 +161,6 @@ function openModal(wallpaper) {
     likeBtn.textContent = "❤️ Like";
   }
 
-  // Setup like button click
   likeBtn.onclick = () => toggleLike(wallpaper.id);
 
   modal.classList.remove("hidden");
@@ -152,7 +173,7 @@ function closeModal() {
 
 // Like functionality using localStorage
 function initLikes() {
-  // Nothing needed here now, future expansions possible
+  // Placeholder for future extensibility
 }
 
 function toggleLike(id) {
