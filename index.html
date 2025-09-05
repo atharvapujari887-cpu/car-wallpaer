@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CarWallpaper</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -16,20 +16,20 @@
   </header>
 
   <section class="search-section">
-    <div class="search-wrapper">
-      <input type="text" placeholder="Search wallpapers..." aria-label="Search wallpapers" />
-      <button id="search-btn" aria-label="Search">🔍</button>
+    <div class="search-box">
+      <input type="text" placeholder="Search wallpapers..." />
+      <button id="search-btn">Search</button>
     </div>
     <div class="tags">
-      <button data-tag="cars" aria-pressed="false">Cars</button>
-      <button data-tag="super car" aria-pressed="false">Super Car</button>
-      <button data-tag="nature" aria-pressed="false">Nature</button>
-      <button data-tag="night" aria-pressed="false">Night</button>
-      <button data-tag="day" aria-pressed="false">Day</button>
+      <button data-tag="cars">Cars</button>
+      <button data-tag="super car">Super Car</button>
+      <button data-tag="nature">Nature</button>
+      <button data-tag="night">Night</button>
+      <button data-tag="day">Day</button>
     </div>
   </section>
 
-  <div class="main-container">
+  <main class="main-container">
     <aside class="sidebar">
       <h3>Menu</h3>
       <ul>
@@ -39,10 +39,8 @@
       </ul>
     </aside>
 
-    <main id="gallery" class="gallery" aria-live="polite" aria-label="Wallpaper gallery">
-      <!-- Wallpapers will load here dynamically -->
-    </main>
-  </div>
+    <section id="gallery" class="gallery"></section>
+  </main>
 
   <script src="app.js"></script>
 </body>
