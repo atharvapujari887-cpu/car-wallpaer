@@ -3,45 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CarWallpaper</title>
+  <title>CarWallpaper - Beginner Site</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header class="navbar">
-    <div class="logo">CarWallpaper</div>
-    <nav class="nav-links">
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div class="container">
+      <div class="logo">CarWallpaper</div>
+      <nav class="nav-links">
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="search-section">
-    <div class="search-box">
-      <input type="text" placeholder="Search wallpapers..." />
-      <button id="search-btn">Search</button>
-    </div>
-    <div class="tags">
-      <button data-tag="cars">Cars</button>
-      <button data-tag="super car">Super Car</button>
-      <button data-tag="nature">Nature</button>
-      <button data-tag="night">Night</button>
-      <button data-tag="day">Day</button>
-    </div>
-  </section>
+  <aside class="sidebar">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#" data-filter="all" class="active">All Wallpapers</a></li>
+      <li><a href="#" data-filter="cars">Cars</a></li>
+      <li><a href="#" data-filter="super car">Super Car</a></li>
+      <li><a href="#" data-filter="nature">Nature</a></li>
+      <li><a href="#" data-filter="night">Night</a></li>
+      <li><a href="#" data-filter="day">Day</a></li>
+    </ul>
+  </aside>
 
-  <main class="main-container">
-    <aside class="sidebar">
-      <h3>Menu</h3>
-      <ul>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Downloads</a></li>
-        <li><a href="#">Filters</a></li>
-      </ul>
-    </aside>
+  <main class="main-content">
+    <section class="search-section">
+      <input type="text" placeholder="Search wallpapers..." id="search-input" />
+      <button id="search-button">Search</button>
+    </section>
 
     <section id="gallery" class="gallery"></section>
   </main>
 
+  <!-- Modal for wallpaper details -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <img id="modal-image" src="" alt="Wallpaper" />
+      <div id="modal-title"></div>
+      <div class="modal-actions">
+        <button id="like-btn">❤️ Like</button>
+        <a id="download-btn" href="#" download>⬇️ Download</a>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
+
+
