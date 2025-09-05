@@ -129,7 +129,7 @@ body {
   gap: 1.5rem;
   padding: 0 1rem;
   max-width: 1200px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 0rem;
   /* Add min-height to push sidebar to stay vertically full height */
   min-height: 80vh;
   width: 100%;
@@ -142,7 +142,7 @@ body {
   background: #333;
   color: white;
   border-radius: 15px;
-  padding: 1.5rem 1rem;
+  padding: 0rem 0rem;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
   /* Fix sidebar to left with position sticky to maintain on scroll */
   position: sticky;
@@ -169,7 +169,7 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.4rem 0.6rem;
+  padding: 0rem 0rem;
   border-radius: 10px;
   display: block;
   transition: background 0.3s;
