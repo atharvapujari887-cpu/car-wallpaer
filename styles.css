@@ -9,17 +9,20 @@ body {
   min-height: 100vh;
 }
 
-/* Navbar */
 .navbar {
   background: #222;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  padding: 1rem 1.5rem;  /* Reduce horizontal padding for full width */
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw; /* full viewport width */
+  box-sizing: border-box; /* make padding included in width */
+  border-radius: 0; /* remove rounded corners */
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -29,21 +32,28 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
   user-select: none;
+  margin-left: 1rem; /* add left margin for some space */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 1rem; /* add margin on right side */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 1.5rem;
   font-weight: 600;
-  border-radius: 10px;
   padding: 0.3rem 0.8rem;
+  border-radius: 10px;
   transition: background 0.3s;
 }
 
 .nav-links a:hover {
   background: #ff9800;
 }
+
 
 /* Search section */
 .search-section {
