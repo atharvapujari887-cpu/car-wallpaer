@@ -13,16 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayWallpapers(wallpapersToShow) {
   const gallery = document.getElementById("gallery");
-  gallery.innerHTML = ""; // Clear previous wallpapers
+  gallery.innerHTML = "";
 
   if (wallpapersToShow.length === 0) {
-    gallery.innerHTML = "<p>No wallpapers found.</p>";
+    gallery.innerHTML = "<p style='color:#ff6f61; font-weight:700;'>No wallpapers found.</p>";
     return;
   }
 
   wallpapersToShow.forEach((item) => {
     const container = document.createElement("div");
     container.classList.add("wallpaper-item");
+    container.setAttribute("tabindex", "0");
 
     const img = document.createElement("img");
     img.src = item.url;
@@ -42,12 +43,19 @@ function displayWallpapers(wallpapersToShow) {
 
 function setupSearchAndTags() {
   const searchBtn = document.getElementById("search-btn");
-  const searchInput = document.querySelector(".search-box input");
-  const tagSpans = document.querySelectorAll(".tags span");
+  const searchInput = document.querySelector(".search-wrapper input");
+  const tagButtons = document.querySelectorAll(".tags button");
 
-  // Reset active on tags function
+  // Accessibility attribute helper
+  function setAriaPressed(button, isPressed) {
+    button.setAttribute("aria-pressed", isPressed);
+  }
+
   function resetTags() {
-    tagSpans.forEach((tag) => tag.classList.remove("active"));
+    tagButtons.forEach((btn) => {
+      btn.classList.remove("active");
+      setAriaPressed(btn, false);
+    });
   }
 
   searchBtn.addEventListener("click", () => {
@@ -56,23 +64,28 @@ function setupSearchAndTags() {
     filterWallpapers(keyword);
   });
 
-  tagSpans.forEach((tag) => {
-    tag.addEventListener("click", () => {
-      const tagName = tag.dataset.tag.toLowerCase();
+  tagButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tagName = btn.dataset.tag.toLowerCase();
       searchInput.value = "";
-      if (tag.classList.contains("active")) {
-        tag.classList.remove("active");
-        displayWallpapers(wallpapers);
-      } else {
-        resetTags();
-        tag.classList.add("active");
+      const isActive = btn.classList.contains("active");
+      resetTags();
+      if (!isActive) {
+        btn.classList.add("active");
+        setAriaPressed(btn, true);
         filterWallpapers(tagName);
+      } else {
+        displayWallpapers(wallpapers);
       }
     });
   });
 }
 
 function filterWallpapers(keyword) {
+  if (!keyword) {
+    displayWallpapers(wallpapers);
+    return;
+  }
   const filtered = wallpapers.filter(
     (wp) =>
       wp.title.toLowerCase().includes(keyword) ||
@@ -80,3 +93,5 @@ function filterWallpapers(keyword) {
   );
   displayWallpapers(filtered);
 }
+
+
